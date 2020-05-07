@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :news
   root to: 'home#top'
   get 'home/about'
   get 'home/contact'
