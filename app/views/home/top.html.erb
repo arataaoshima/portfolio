@@ -1,20 +1,45 @@
-<%= render "home/carousel" %>
+<div class="video-wrapper">
+  <video src="LOGO.mp4" autoplay muted width="80%"></video>
+</div>
 
 <div class="top-content top-about">
   <div class="title">
-  <h1>About</h1>
+  <h1>Through Technoldgy, your work will be more creative</h1>
   </div>
+  <div class="about-content-wrapper">
+    <h3> What if your routine job can be cut by half?</h3>
+    <h3> You can use more time to think about your business idea</h3>
+    <h3> What if your idea became real in one week?</h3>
+    <h3> Your can develop your business whatever you want to make</h3>
+    <h3> It is possible through Technoldgy</h3>
+    <h3> Technoldgy is Here and I can make it accessible for you</h3>
+    <h3> You do not have to do it alone, let's work together</h3>
+  </div>
+
 </div>
 
 <div class="top-content top-services">
-  <div class="title">
+  <div class="title top-service-title">
   <h1>Services</h1>
   </div>
   <%= render "home/services" %>
 </div>
 
 <div class="top-content top-news">
-  <div class="title">
+
+  <div class="title top-news">
   <h1>News</h1>
   </div>
+
+      <% @news.each do |n| %>
+      <div class="news-content row">
+        <div class="top-news-date col-6">
+          <%= n.created_at.in_time_zone("Pacific Time (US & Canada)").strftime('%Y/%m/%d') %>
+        </div>
+        <div class="top-news-title col-6">
+          <%= link_to n.title, news_path(n), class:"top-news-link", :style=>"color:black;"  %>
+        </div>
+      </div>
+      <% end %>
+      <%= link_to "View More News", news_index_path, class:"btn btn-outline-primary  view-news-btn" %>
 </div>

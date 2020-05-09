@@ -1,26 +1,20 @@
 <p id="notice"><%= notice %></p>
+<div class="news-index-wrapper">
+  
+  <h1>News</h1>
+      <% @news.each do |news| %>
+          <%= news.created_at.in_time_zone("Pacific Time (US & Canada)").strftime('%Y/%m/%d') %>
+          <%= link_to news.title, news %></br>
+          <% if user_signed_in? %>
+          <td><%= link_to 'Show', news %></td>
+          <td><%= link_to 'Edit', edit_news_path(news) %></td>
+          <td><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+</div>
 
-<h1>News</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @news.each do |news| %>
-      <tr>
-        <td><%= news.title %></td>
-        <td><%= link_to 'Show', news %></td>
-        <td><%= link_to 'Edit', edit_news_path(news) %></td>
-        <td><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
