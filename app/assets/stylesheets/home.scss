@@ -129,6 +129,9 @@
   width:70%;
   //height:70%;
 }
+.service-img :hover{
+  width:75%;
+}
 
 .service-title {
   font-size: 1.5em;
@@ -189,4 +192,17 @@
 .video-wrapper {
   text-align:center;
   margin: 0 auto;
+}
+
+.news-index-wrapper {
+  text-align: center;
+}
+
+.contact-wrapper {
+  padding-bottom:70px;
+}
+.example-wrapper {
+  text-align: center;
+  padding-top:50px;
+  padding-bottom:70px;
 }

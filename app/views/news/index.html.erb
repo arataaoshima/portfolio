@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 <div class="news-index-wrapper">
-  
-  <h1>News</h1>
+  <div class="title">
+    <h1>News</h1>
+  </div>
+
       <% @news.each do |news| %>
           <%= news.created_at.in_time_zone("Pacific Time (US & Canada)").strftime('%Y/%m/%d') %>
           <%= link_to news.title, news %></br>
@@ -17,5 +19,6 @@
 
 
 <br>
-
+<% if user_signed_in? %>
 <%= link_to 'New News', new_news_path %>
+<% end %>

@@ -6,12 +6,14 @@
 
   <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
     <ul class="navbar-nav">
+      <% if user_signed_in? %>
       <li class="nav-item">
         <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/home/about">About</a>
       </li>
+      <% end %>
       <li class="nav-item">
         <a class="nav-link" href="/home/contact">Contact</a>
       </li>
@@ -20,7 +22,7 @@
         <div class="nav-link">Sign in as Admin</div>
       </li>
       <% end %>
-
+      <% if user_signed_in? %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Admin
@@ -33,6 +35,7 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
+        <% end %>
     </ul>
   </div>
 </nav>
