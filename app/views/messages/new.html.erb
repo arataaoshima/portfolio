@@ -1,0 +1,8 @@
+<div class="title">
+<h1>Let's Work Together!</h1>
+</div>
+
+<%= render 'form', message: @message %>
+<% if user_signed_in? %>
+<%= link_to 'Back', messages_path %>
+<% end %>
